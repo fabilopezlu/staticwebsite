@@ -19,11 +19,12 @@ def main(**args):
     copy_files_recursive(dir_path_static, dir_path_public)
 
     print("Generating page...")
+    full_path = os.path.join(basepath, dir_path_public[2:])+"/"
     generate_page_recursive (
         os.path.join(dir_path_content),
         template_path,
         os.path.join(dir_path_public),
-        basepath,
+        os.path.join(full_path),
     )
 
 
